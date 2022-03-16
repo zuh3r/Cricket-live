@@ -1,11 +1,14 @@
-const state = {
-    scores: []
-}
 
-axios  
-    .get('/api/scores')
-    .then(res => res.data)
-    .then(scores => {
-        state.scores = scores
-        renderLogin()
-    })
+
+
+var tournaments = {}
+
+
+axios.get('/api/matches/today') 
+.then(res => {
+    tournaments = res.data.sport_events
+    console.log(tournaments)
+    console.log("tournametns recvied")
+    renderTournaments(tournaments)
+    renderLogin()
+})
