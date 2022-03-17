@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
     var mm = today.getMonth()+1; if (mm < 10) mm = '0' + mm
     var yyyy = today.getFullYear();
 
-    var date = `${yyyy}-${mm}-${dd}`
+    var date = `${yyyy}-${mm}-${dd-1}`
     axios.get(`https://newsapi.org/v2/everything?q=${query}&from=${date}&sortBy=date&apiKey=${process.env['NEWS_API_KEY']}`)
     .then(response => response.data) 
     .then(matches => {
