@@ -20,15 +20,18 @@ function renderEdit(event) {
     const editField = event.target.closest('p')
     editField.innerHTML = `
         <form action="" onSubmit="editUser(event)">
-            <label for="">${editField.id}: </label><input type="text"><button onClick="edit">Submit</button>
+            <label for="">${editField.id}: </label><input type="text" name="${editField.id}-edit"><button>Submit</button>
         </form>
     `
 }
 
 function editUser(event) {
     event.preventDefault()
+    console.log(event)
     const form = event.target
+    console.log(form)
     const data = Object.fromEntries(new FormData(form))
+    console.log(data)
     axios
         .put('/api/users', data)
 }
