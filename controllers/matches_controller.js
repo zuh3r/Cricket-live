@@ -4,21 +4,23 @@ const axios = require('axios')
 const router = express.Router()
 
 
-//ROUTES
+//ROUTES 
 
-router.get('/schedules', (req, res) => {
-     console.log("test")
+router.get('/schedule/:tournament_id', (req, res) => {
+    console.log("test, in schedule route")
+    var tournament_id = req.params.tournament_id 
     
-    axios.get(`https://api.sportradar.com/cricket-t2/en/schedules/live/schedule.json?api_key=${process.env['SPORTRADAR_API_KEY']}`)
-    .then(response => response.data) 
-    .then(matches => {
-        res.json(matches) 
+    axios.get(`http://api.sportradar.us/cricket-t2/en/tournaments/${tournament_id}/schedule.json?api_key=${process.env['SPORTRADAR_API_KEY']}`)
+    .then(response => { testResponse = response; return response.data }) 
+    .then(data => { 
+        res.json(data) 
     })
+    .catch(error => res.json(error))
     
 })
 
 router.get('/tournaments', (req, res) => {
-    axios.get(`http://api.sportradar.us/cricket-t2/en/tournaments.json?api_key=${process.env['SPORTRADAR_API_KEY']}`)
+    axios.get(`http://api.sportradar.us/cricket-t2/en/tournaments.json?api_key=${process.env['SPORTRADAR_API_KEY2']}`)
     .then(response => response.data)
     .then(tournaments => res.json(tournaments))
 })
@@ -39,6 +41,18 @@ router.get('/team/:name', (req,res) => {
     var teamName = req.params.name
     axios.get(`https://serpapi.com/search.json?q=${teamName + ' cricket team logo'}&tbm=isch&ijn=0&api_key=${process.env['SERPAPI_API_KEY']}`)
     .then(response => res.json(response.images_results[0].thumbnail))
+})
+
+router.get('/match/summary/:match_id', (req, res) => {
+
+    console.log("test, in match summary route")
+    var match_id = req.params.match_id 
+    
+    axios.get(`http://api.sportradar.us/cricket-t2/en/matches/${match_id}/summary.json?api_key=${process.env['SPORTRADAR_API_KEY']}`)
+    .then(response => { testResponse = response; return response.data }) 
+    .then(data => { 
+        res.json(data) 
+    })
 })
  
 
