@@ -2,7 +2,7 @@ CREATE DATABASE cricket_live;
 \c cricket_live
 
 CREATE TABLE users(
-    id SERIAL PRIMARY KEY
+    id SERIAL PRIMARY KEY,
     name TEXT,
     email TEXT,
     password_digest TEXT
@@ -16,4 +16,4 @@ CREATE TABLE favourites(
   gender TEXT,
   match_type TEXT,
   player TEXT
-)
+);
