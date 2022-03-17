@@ -11,15 +11,15 @@ function renderTournaments(tournamentsData){
     
 } 
 
-function getTournaments(){
-     console.log('test2')
-    axios.get('/api/matches/today') 
-        .then(data => tournaments = data)
-        .then(() => renderTournaments(tournaments.data.sport_events)) 
+// function getTournaments(){
+//      console.log('test2')
+//     axios.get('/api/matches/today') 
+//         .then(data => tournaments = data)
+//         .then(() => renderTournaments(tournaments.data.sport_events)) 
         
 
-}
- 
+// }
+
 
 function renderMatch(tournaments){
 

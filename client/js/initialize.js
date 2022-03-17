@@ -1,6 +1,4 @@
 
-
-
 var tournaments = {}
 
 
@@ -10,5 +8,8 @@ axios.get('/api/matches/today')
     console.log(tournaments)
     console.log("tournametns recvied")
     renderTournaments(tournaments)
-    renderLogin()
+    renderAllNews()
+    renderLogin() 
 })
+
+getNews()
