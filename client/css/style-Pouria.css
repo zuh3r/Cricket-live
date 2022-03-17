@@ -29,10 +29,10 @@ header {
 li {
   padding-left: 10px;
 }
-.tournament {
+/* .tournament {
   display: flex;
   justify-content: center;
-}
+} */
 .teams {
   display: flex;
   justify-content: space-between;
@@ -41,7 +41,7 @@ li {
   margin-top: 100px;
   display: grid;
   grid-template-columns: 1fr;
-  width: 80%;
+  /* width: 80%; */
   box-shadow: 2px 1px 7px 2px rgba(0, 0, 0, 0.557);
   /* box-shadow: 3px 3px rgb(3, 3, 3), -1em 0 0.4em olive; */
   padding-left: 25px;
