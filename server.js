@@ -1,23 +1,35 @@
-const express = require("express");
+const express = require('express')
 
-const logger = require("./middleware/logger");
-const sessions = require("./middleware/sessions");
+//middlewares
+const logger = require('./middlewares/logger') 
+const sessions = require('./middlewares/sessions')
 
-const usersController = require("./controllers/users_controller");
-const sessionsController = require("./controllers/sessions_controller");
+//controllers
+const matchesController = require('./controllers/matches_controller')
+const newsController = require('./controllers/news_controller')
+const sessionsController = require('./controllers/sessions_controller')
+const usersController = require('./controllers/users_controller')
 
-const app = express();
-const port = 8674;
+//server setup 
+const app = express()
+const port = 3000
 
-app.listen(port, () => console.log(`listening on port ${port}`));
+//start web server
+app.listen(port, 
+    () => console.log(`Cricket server started... listening on port ${port}`)
+)
 
-app.use(logger);
+//using middlewares
+app.use(logger) 
+app.use(sessions)
 
-app.use(express.static("client"));
+app.use(express.static('client'))
 
-app.use(express.json());
+app.use(express.json())
 
-app.use(sessions);
 
-app.use("/api/users", usersController);
-app.use("/api/sessions", sessionsController);
+//routes
+app.use('/api/matches', matchesController)  
+app.use('/api/news', newsController)
+app.use('/api/sessions', sessionsController)
+app.use('/api/users', usersController)
