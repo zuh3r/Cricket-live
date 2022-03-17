@@ -24,4 +24,4 @@ const Favourites = {
       }
 }
     
-    module.exports = Favourites
+module.exports = Favourites
