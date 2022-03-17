@@ -20,7 +20,28 @@ const User = {
         return db
           .query(sql, [name, email, passwordDigest])
           .then(dbRes => dbRes.rows[0].name)
-      }
+    },
+      updateName: (name, id) => {
+        const sql = `
+            UPDATE users
+            SET name = $2
+            WHERE id = $1   
+        `
+        return db
+            .query(sql, [name, id])
+            .then(dbRes => dbRes.rows[0])
+    },
+    updateEmail: (email, id) => {
+        const sql = `
+            UPDATE users
+            SET name = $2
+            WHERE id = $1 
+        `
+        return db
+            .query(sql, [id, email])
+            .then(dbRes => dbRes.rows[0])
+    }
 }
+
     
     module.exports = User

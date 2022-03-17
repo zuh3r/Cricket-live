@@ -19,7 +19,19 @@ router.post('/', (req, res) => {
 })
 
 router.put('/', (req, res) => {
+    const userId = req.session.userId
+    const editInput = req.body
+    if (Object.keys(editInput)[0].includes('Name')) {
+        User
+            .updateName(editInput, userId)
+            .then(userName => res.json(userName))
+    } else if (Object.keys(editInput)[0].includes('Email')) {
+        User
+            .updateEmail(editInput, userId)
+            .then(userEmail => res.json(userEmail))
+    }
     
+
 })
 
 module.exports = router
