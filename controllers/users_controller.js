@@ -18,4 +18,8 @@ router.post('/', (req, res) => {
         .then(userName => res.json(userName))
 })
 
+router.put('/', (req, res) => {
+    
+})
+
 module.exports = router

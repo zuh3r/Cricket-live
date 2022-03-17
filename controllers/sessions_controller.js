@@ -27,9 +27,8 @@ router.post('/', (req, res) => {
 })
 
 router.delete('/', (req, res) => {
-    req.session
-        .destroy()
-        .then(() => res.json({ message: 'Logout Successful'})) 
+    req.session.userId = undefined
+    res.json({message: 'Logout Successful'})
 })
 
 module.exports = router
