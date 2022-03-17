@@ -16,10 +16,7 @@ const Favourites = {
           SELECT * FROM favourites
           WHERE email = (
             SELECT email FROM users WHERE email = $1
-          ) 
-          users(name, email, password_digest)
-          VALUES ($1, $2, $3)
-          RETURNING *
+          )
         `
         return db
           .query(sql, [email])
