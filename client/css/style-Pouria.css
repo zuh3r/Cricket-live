@@ -29,9 +29,6 @@ header {
 li {
   padding-left: 10px;
 }
-li:hover {
-  overflow-y: scroll;
-}
 .tournament {
   display: flex;
   justify-content: center;

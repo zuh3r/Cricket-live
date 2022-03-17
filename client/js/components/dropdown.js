@@ -1,5 +1,4 @@
 function renderWelcome(name, email) {
-    console.log('render welcome' + name)
     document.querySelector('#welcome').innerHTML = `
         <p>Welcome back ${name}</p>
         <div class="dropdown">
