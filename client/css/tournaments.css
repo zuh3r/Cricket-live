@@ -1,118 +1,153 @@
 html * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-.hide{
-    display: none;
+.hide {
+  display: none;
 }
 
-.tournaments_ul li .content{
-    padding: 70px 50px;
+.tournaments_ul li .content {
+  padding: 70px 50px;
 }
 
 .tournament-name {
-    font-size: 1.9em;
-    padding-bottom: 15px;
-    text-align: center;
-    display: block;
+  font-size: 1.3em;
+  padding-bottom: 15px;
+  text-align: center;
+  display: block;
 }
 
 .tournaments_ul .match-date {
-    font-size: 24px;
-    color: gray;
-    text-align: center;
-    display: block;
+  font-size: 21px;
+  color: rgb(244, 238, 238);
+  text-align: center;
+  display: block;
 }
 
-.details{
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-top: 19px;
+.details {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 19px;
 }
 
-.details .type{
-    text-transform: uppercase;
+.details .type {
+  text-transform: uppercase;
 }
 
-.tournaments_ul li, .tournaments_ul {
-    list-style: none;
-    padding: 0;
+.tournaments_ul li,
+.tournaments_ul {
+  list-style: none;
+  padding: 0;
 }
-.tournaments_ul{ 
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    width: 100%; 
-    justify-content: space-between;
+.tournaments_ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  width: 100%;
+  justify-content: space-between;
 }
-.tournaments_ul li .content{ 
-    background-color: #1a4500fa;
-    transition:0.5s;    
-    width: 51vw;
-    height: 100%;
+.tournaments_ul li .content {
+  /* background-color: #1a4500fa; */
+  background-color: #373a34fa;
+
+  transition: 0.5s;
+  width: 51vw;
+  height: 100%;
 }
-.tournaments_ul li{
-    width: 10vw;
-    transition: 0.4s;
+.tournaments_ul li {
+  width: 10vw;
+  transition: 0.4s;
 }
-/* .tournaments_ul li:nth-child(3){
-    width: 50vw;
-    transition: 0.4s;
-} */
-.tournaments_ul li.hover{
-    width: 50vw;
-    transition: 0.4s;
+
+.tournaments_ul li.hover {
+  width: 50vw;
+  transition: 0.4s;
 }
-.tournaments_ul li.hover .content{
-    background-color: green;
-    transition:0.5s;    
+.tournaments_ul li.hover .content {
+  background-color: rgb(174, 173, 173);
+  transition: 0.5s;
 }
 .tournamentsSection {
-    width: 93%;
-    overflow: hidden;
-    margin: 0px auto;
+  width: 93%;
+  overflow: hidden;
+  margin: 0px auto;
+  font-family: "Orbitron", sans-serif;
 }
-
+.tournaments_ul .type {
+  color: rgba(147, 250, 83, 0.673);
+}
 
 /* MATCHES */
 
 .matches_ul {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 30px;
-    padding: 20px 0px;
-    list-style: none;
-    margin: 0px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  padding: 20px 0px;
+  list-style: none;
+  margin: 0px auto;
 }
 .matchesSection {
-    width: 93%;
-    margin: 0px auto;
+  width: 96%;
+  margin: 0px auto;
 }
-.matches_ul li{
-    position: relative; 
-    padding: 34px;
+.matches_ul li {
+  position: relative;
+  padding: 34px;
 }
 .details {
-    padding-left: 0px;
+  padding-left: 0px;
 }
 span.status {
-    padding: 2px 10px;
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    border-radius: 7px;
-    font-size: 0.8em;
+  padding: 2px 10px;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  border-radius: 7px;
+  font-size: 0.8em;
 }
 
-.status{
-    background-color: #74acff;
+.status {
+  background-color: #74acff;
 }
-.status.cancelled{
-    background-color: #ff7474;
+.status.cancelled {
+  background-color: #ff7474;
 }
-.status.live{
-    background-color: #33b300;
-} 
+.status.live {
+  background-color: rgb(103, 176, 57);
+}
 .matches_ul .tournament-name {
-    font-size: 1.3em;
+  font-size: 1.3em;
+}
+
+@media only screen and (max-width: 600px) {
+  .tournaments_ul li .content {
+    /* background-color: #1a4500fa; */
+    background-color: #373a34fa;
+
+    width: 51vw;
+    height: 150px;
+  }
+  .tournaments_ul .current-match {
+    padding: 0 !important;
+    font-size: medium;
+  }
+  .tournaments_ul .match-date {
+    font-size: 13px;
+    color: rgb(244, 238, 238);
+    display: block;
+    padding: 0;
+  }
+  .tournament-name {
+    font-size: 13px;
+    padding-bottom: 10px;
+
+    display: block;
+  }
+  .tournaments_ul .type {
+    font-size: 12px;
+  }
+  .tournaments_ul .match-country {
+    font-size: 12px;
+  }
 }
