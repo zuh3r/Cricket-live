@@ -3,10 +3,10 @@ var matches = {}
 var tournaments = {}
 
 document.querySelector('#page').innerHTML = `
+    <div class='newsSection'></div>
     <div class='tournamentsSection'></div>
     <div class='matchesSection'></div>
-    <div class='newsSection'></div>
-    `
+`
 
 
 
