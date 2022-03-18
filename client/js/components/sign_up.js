@@ -32,10 +32,9 @@ function signUp(event) {
     event.preventDefault()
     const form = event.target
     const data = Object.fromEntries(new FormData(form))
-    console.log(data)
     axios
         .post('/api/users', data)
         .then(res => res.data)
-        .then(userName => console.log(userName))
+        .then(() => renderHomePage())
 }
 

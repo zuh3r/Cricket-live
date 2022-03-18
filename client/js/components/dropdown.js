@@ -32,5 +32,5 @@ function logout(event) {
     event.preventDefault()
     axios
         .delete('/api/sessions')
-        .then(res => console.log(res.message))
+        .then(() => renderHeaderNav())
 }

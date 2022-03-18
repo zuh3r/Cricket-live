@@ -37,6 +37,7 @@ function login(event) {
         .then(user => {
             renderHeaderNav(true)
             renderWelcome(user.username, user.email)
+            renderHomePage()
         })
         .catch(error => {
             let errorDOM = document.querySelector('.login .error')

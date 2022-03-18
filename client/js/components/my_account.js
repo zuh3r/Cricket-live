@@ -1,6 +1,4 @@
 function renderMyAccount(name, email) {
-    console.log('render my account')
-    // event.preventdefault()
     document.querySelector('#page').innerHTML = `
         <section class="my-account">
             <h2>My Account</h2>
@@ -27,10 +25,12 @@ function renderEdit(event) {
 
 function editUser(event) {
     event.preventDefault()
-    console.log(event)
     const form = event.target
-    console.log(form)
     const data = Object.fromEntries(new FormData(form))
     axios
         .put('/api/users', data)
+        .then(userDetails => {
+            renderWelcome(userDetails.data.name, userDetails.data.email)
+            renderHomePage()
+        })
 }
