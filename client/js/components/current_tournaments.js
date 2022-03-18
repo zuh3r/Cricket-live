@@ -4,8 +4,7 @@ function renderTournaments(tournamentsData, startIndex) {
   document.querySelector(".tournamentsSection").innerHTML = ` 
             <ul class="tournaments_ul">
                 ${renderTournamentsList(tournamentsData, startIndex)}
-            </ul> 
-            <span class="showNextFiveOnClick">Next</span>
+            </ul>
     
     `;
   document

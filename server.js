@@ -13,7 +13,7 @@ const usersController = require('./controllers/users_controller')
 
 //server setup 
 const app = express()
-const port = 3000
+const port = process.env.PORT || 3000
 
 //start web server
 app.listen(port, 
