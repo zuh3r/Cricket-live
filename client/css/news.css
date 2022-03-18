@@ -1,4 +1,13 @@
 .news-article {
-    display: flex;
-    width: 100%;
+  display: flex;
+  width: 100%;
 }
+/* .newsSection {
+  width: 93%;
+  margin: 0px auto;
+}
+.news {
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+} */

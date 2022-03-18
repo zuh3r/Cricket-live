@@ -3,6 +3,9 @@ body {
   font-family: "Khand", sans-serif;
   margin: 0;
 }
+#page {
+  min-height: calc(100vh - 250px);
+}
 .page {
   margin-top: 20px;
 }
@@ -16,6 +19,7 @@ header {
 .left-nav {
   padding-left: 30px;
   font-size: 20px;
+  cursor: pointer;
 }
 .right-nav ul {
   display: flex;
@@ -76,11 +80,15 @@ body img {
 .news-article {
   padding-left: 30px;
   font-size: 20px;
+  cursor: pointer;
 
   font-family: "Paytone One", sans-serif;
 }
 .article-info {
   font-family: "Khand", sans-serif;
+}
+.article-info h1 {
+  font-family: "Paytone One", sans-serif;
 }
 .news-p {
   padding-left: 30px;
@@ -92,7 +100,9 @@ body img {
   font-size: 16px;
   font-family: "IBM Plex Serif", serif;
 }
-
+.news-p p {
+  padding-right: 10px;
+}
 .other-matches {
   margin-top: 20px;
   /* padding-left: 30px; */
@@ -151,6 +161,7 @@ body img {
   font-size: 20px;
   margin: 0 auto;
 }
+
 .footer-icons {
   display: flex;
   justify-content: space-evenly;
@@ -179,9 +190,7 @@ button {
   font-family: "Khand", sans-serif;
   font-size: large;
 }
-.sign-up-footer {
-  margin-top: 200px;
-}
+
 fieldset {
   border: 0;
 }
@@ -189,7 +198,7 @@ input {
   width: 200px;
 }
 .login {
-  margin-top: 125px;
+  margin-top: 50px;
   text-align: center;
   font-size: larger;
 }
@@ -253,9 +262,10 @@ input {
   .news-article h1 {
     font-size: 15px;
   }
+
   .news img {
     padding: 0;
-    width: 100%;
+    width: 50%;
   }
   .article-info {
     font-size: 15px;
@@ -283,6 +293,15 @@ input {
     text-align: center;
     font-size: larger;
   }
+  .right-nav ul {
+    margin-right: 20px;
+
+    font-size: 18px;
+    padding-left: 0;
+  }
+  li {
+    padding-left: 10px;
+  }
 }
 
 @media only screen and (max-width: 1000px) {
@@ -297,7 +316,7 @@ input {
   }
   .news img {
     padding: 0;
-    width: 300px;
+    /* width: 300px; */
   }
   .news-article h1 {
     font-size: 18px;
@@ -314,41 +333,5 @@ input {
     width: fit-content;
     font-size: 14px;
     font-family: "IBM Plex Serif", serif;
-  }
-}
-@media only screen and (max-width: 600px) {
-  .right-nav ul {
-    margin-right: 20px;
-
-    font-size: 18px;
-    padding-left: 0;
-  }
-  li {
-    padding-left: 10px;
-  }
-  .news {
-    margin-left: 0;
-    width: 100%;
-    margin-top: 30px;
-    background-color: rgb(0, 0, 0);
-    color: rgba(245, 245, 245, 0.913);
-    display: grid;
-    grid-template-columns: 1fr;
-  }
-  .news img {
-    padding: 0;
-    width: 100%;
-  }
-  .news-p {
-    padding-left: 10px;
-    padding-right: 10px;
-
-    padding-top: 20px;
-    padding-bottom: 20px;
-
-    margin: 0;
-    color: black;
-    width: fit-content;
-    font-size: 16px;
   }
 }
