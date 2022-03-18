@@ -34,7 +34,10 @@ function login(event) {
     axios
         .post('/api/sessions', data)
         .then(res => res.data)
-        .then(user => renderWelcome(user.username, user.email))
+        .then(user => {
+            renderHeaderNav(true)
+            renderWelcome(user.username, user.email)
+        })
         .catch(error => {
             let errorDOM = document.querySelector('.login .error')
             errorDOM.textContent = error.response.data.message

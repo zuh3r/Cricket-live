@@ -1,8 +1,7 @@
 function renderWelcome(name, email) {
     document.querySelector('#welcome').innerHTML = `
-        <p>Welcome back ${name}</p>
         <div class="dropdown">
-            <button onClick="renderDropDown()" class="dropbtn">Menu</button>
+        <p>Welcome back, ${name}<button onClick="renderDropDown()" class="dropbtn">Menu</button></p>
             <div id="myDropdown" class="dropdown-content">
                 <button onClick="renderMyAccount('${name}', '${email}')" class="my-acc-btn">My Account</button>
                 <button onClick="renderPreferences()" class="pref-btn">Preferences</button>

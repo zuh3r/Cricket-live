@@ -22,12 +22,14 @@ router.put('/', (req, res) => {
     const userId = req.session.userId
     const editInput = req.body
     if (Object.keys(editInput)[0].includes('Name')) {
+        console.log('name found')
+        const newName = editInput['Name-edit']
         User
-            .updateName(editInput, userId)
+            .updateName(`'${newName}'`, userId)
             .then(userName => res.json(userName))
     } else if (Object.keys(editInput)[0].includes('Email')) {
         User
-            .updateEmail(editInput, userId)
+            .updateEmail(editInput['Email-edit'], userId)
             .then(userEmail => res.json(userEmail))
     }
     

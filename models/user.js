@@ -25,7 +25,8 @@ const User = {
         const sql = `
             UPDATE users
             SET name = $2
-            WHERE id = $1   
+            WHERE id = $1
+            RETURNING *   
         `
         return db
             .query(sql, [name, id])
@@ -36,6 +37,7 @@ const User = {
             UPDATE users
             SET name = $2
             WHERE id = $1 
+            RETURNING *
         `
         return db
             .query(sql, [id, email])
