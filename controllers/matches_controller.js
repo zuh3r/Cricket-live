@@ -31,7 +31,7 @@ router.get('/today', (req, res) => {
     var dd = today.getDate();
     var mm = today.getMonth()+1; if (mm < 10) mm = '0' + mm
     var yyyy = today.getFullYear();
-
+    
     axios.get(`http://api.sportradar.us/cricket-t2/en/schedules/${yyyy}-${mm}-${dd}/schedule.json?api_key=${process.env['SPORTRADAR_API_KEY']}`)
     .then(response => response.data)
     .then(tournaments => res.json(tournaments))
@@ -54,6 +54,6 @@ router.get('/match/summary/:match_id', (req, res) => {
         res.json(data) 
     })
 })
- 
+
 
 module.exports = router;
