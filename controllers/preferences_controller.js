@@ -5,15 +5,6 @@ const Preferences = require('../models/preferences')
 
 const router = express.Router()
 
-// router.post('/', (req, res) => {
-//     console.log(req.body)
-//     const { name, email } = req.body
-
-//     User
-//         .create(name, email, passwordDigest)
-//         .then(userName => res.json(userName))
-// })
-
 router.put('/', (req, res) => {
     const userEmail = req.session.userEmail
     const editInput = req.body
