@@ -1,11 +1,11 @@
 function renderAllNews(){ 
-    document.querySelector('#page').innerHTML += `
-        <section class="news">
-            <ul>
-                ${renderNews()}
-            </ul>
-        </section>
+    document.querySelector('.newsSection').innerHTML = ` 
+         
+            <div class="news">
+                ${renderNews()} 
+            </div>  
     `
+ 
 } 
 
 var newsData = {}
@@ -23,35 +23,21 @@ function getNews(){
 
 
 function renderNews(){
-
-    
-    return newsData.map( news => 
-        `<li news-url='${news.url}'>
-
-            <article class="news-article">
-                <h1>${news.title}</h1>
-                <span class="article-info">
-                    <h4>${news.content}</h4>
-                    <h6>Author: ${(news.author)?news.author:''}</h6>
-                </span>
-                <img src="${news.urlToImage}" alt="" class="img1" />
-                <p class="news-p">${news.description}</p>
+    return newsData.slice(0,1).map( news => 
+       `<article  class="news-article" news-url='${news.url}'>  
+            <span class="article-info">
+                <h1>${news.title}</h1> 
+                <h4>${news.content}</h4>
+                <h6>Author: ${(news.author)?news.author:''}</h6>
                 <p>Published: ${news.publishedAt}</p>
-
-                <span>Source: ${news.source.name}</span>
-            </article>
-
-
-        </li>`
-
+                <span>Source: ${news.source.name}</span> 
+            </span>
+            <img src="${news.urlToImage}" alt="" class="img1" />
+            <span class="news-p">${news.description}</span>
+        </article>`
     ).join('')
-
- 
 }
-
-
-
-
+ 
 // <h2>
 // ${news.title}
 // </h2> 

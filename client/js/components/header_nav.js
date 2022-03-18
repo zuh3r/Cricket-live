@@ -3,7 +3,7 @@ function renderHeaderNav() {
     document.querySelector('#header-nav').innerHTML = `
         <header>
             <nav class="left-nav">
-                <h2>Cricket-Live ⏚ <span id="welcome" class="welcome"></span></h2>
+                <h2 onClick="renderHomePage()">Cricket-Live ⏚ <span id="welcome" class="welcome"></span></h2>
             </nav>
             <nav class="right-nav">
                 <ul>
@@ -17,6 +17,7 @@ function renderHeaderNav() {
             </nav>
         </header>
     `
+    renderFooter()
 }
 
 renderHeaderNav()
@@ -27,4 +28,18 @@ function render(component) {
     } else if (component === 'login') {
         renderLogin()
     }
+    
+}
+
+function renderHomePage(){
+
+    document.querySelector('#page').innerHTML = `
+    <div class='newsSection'></div>
+    <div class='tournamentsSection'></div>
+    <div class='matchesSection'></div>
+    `
+
+    renderAllNews()
+    renderTournaments(tournaments,5)
+    renderMatches(matches)
 }
