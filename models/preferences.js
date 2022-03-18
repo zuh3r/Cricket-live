@@ -1,6 +1,6 @@
 const db = require('../db/db')
 
-const Favourites = {
+const Preferences = {
     findByEmail: email => {
         const sql = `
         SELECT * FROM users
@@ -89,4 +89,4 @@ const Favourites = {
       },
 }
     
-module.exports = Favourites
+module.exports = Preferences
