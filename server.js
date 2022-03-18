@@ -7,6 +7,7 @@ const sessions = require('./middlewares/sessions')
 //controllers
 const matchesController = require('./controllers/matches_controller')
 const newsController = require('./controllers/news_controller')
+const preferencesController = require('./controllers/preferences_controller')
 const sessionsController = require('./controllers/sessions_controller')
 const usersController = require('./controllers/users_controller')
 
@@ -31,5 +32,6 @@ app.use(express.json())
 //routes
 app.use('/api/matches', matchesController)  
 app.use('/api/news', newsController)
+app.use('/api/preferences', preferencesController)
 app.use('/api/sessions', sessionsController)
 app.use('/api/users', usersController)

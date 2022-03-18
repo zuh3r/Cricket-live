@@ -16,7 +16,13 @@ const User = {
           INSERT INTO users(name, email, password_digest)
           VALUES ($1, $2, $3)
           RETURNING *
-        `
+          `
+        
+          const sql2 = `
+          INSERT INTO favourites(email)
+          VALUES ($1)
+          `
+          db.query(sql2, [email])
         return db
           .query(sql, [name, email, passwordDigest])
           .then(dbRes => dbRes.rows[0].name)
@@ -47,3 +53,5 @@ const User = {
 
     
     module.exports = User
+
+    // add router.get
