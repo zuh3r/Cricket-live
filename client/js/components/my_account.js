@@ -31,7 +31,6 @@ function editUser(event) {
     const form = event.target
     console.log(form)
     const data = Object.fromEntries(new FormData(form))
-    console.log(data)
     axios
         .put('/api/users', data)
 }
