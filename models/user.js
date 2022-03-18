@@ -29,7 +29,7 @@ const User = {
             RETURNING *   
         `
         return db
-            .query(sql, [name, id])
+            .query(sql, [id, name])
             .then(dbRes => dbRes.rows[0])
     },
     updateEmail: (email, id) => {
