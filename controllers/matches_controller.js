@@ -10,7 +10,7 @@ router.get('/schedule/:tournament_id', (req, res) => {
     console.log("test, in schedule route")
     var tournament_id = req.params.tournament_id 
     
-    axios.get(`http://api.sportradar.us/cricket-t2/en/tournaments/${tournament_id}/schedule.json?api_key=${process.env['SPORTRADAR_API_KEY']}`)
+    axios.get(`https://api.sportradar.us/cricket-t2/en/tournaments/${tournament_id}/schedule.json?api_key=${process.env['SPORTRADAR_API_KEY']}`)
     .then(response => { testResponse = response; return response.data }) 
     .then(data => { 
         res.json(data) 
@@ -20,7 +20,7 @@ router.get('/schedule/:tournament_id', (req, res) => {
 })
 
 router.get('/tournaments', (req, res) => {
-    axios.get(`http://api.sportradar.us/cricket-t2/en/tournaments.json?api_key=${process.env['SPORTRADAR_API_KEY2']}`)
+    axios.get(`https://api.sportradar.us/cricket-t2/en/tournaments.json?api_key=${process.env['SPORTRADAR_API_KEY2']}`)
     .then(response => response.data)
     .then(tournaments => res.json(tournaments))
 })
@@ -32,7 +32,7 @@ router.get('/today', (req, res) => {
     var mm = today.getMonth()+1; if (mm < 10) mm = '0' + mm
     var yyyy = today.getFullYear();
     
-    axios.get(`http://api.sportradar.us/cricket-t2/en/schedules/${yyyy}-${mm}-${dd}/schedule.json?api_key=${process.env['SPORTRADAR_API_KEY']}`)
+    axios.get(`https://api.sportradar.us/cricket-t2/en/schedules/${yyyy}-${mm}-${dd}/schedule.json?api_key=${process.env['SPORTRADAR_API_KEY']}`)
     .then(response => response.data)
     .then(tournaments => res.json(tournaments))
 })
@@ -48,7 +48,7 @@ router.get('/match/summary/:match_id', (req, res) => {
     console.log("test, in match summary route")
     var match_id = req.params.match_id 
     
-    axios.get(`http://api.sportradar.us/cricket-t2/en/matches/${match_id}/summary.json?api_key=${process.env['SPORTRADAR_API_KEY']}`)
+    axios.get(`https://api.sportradar.us/cricket-t2/en/matches/${match_id}/summary.json?api_key=${process.env['SPORTRADAR_API_KEY']}`)
     .then(response => { testResponse = response; return response.data }) 
     .then(data => { 
         res.json(data) 
