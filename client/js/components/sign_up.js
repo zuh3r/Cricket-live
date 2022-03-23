@@ -4,37 +4,36 @@
 // Sign up page will have class="sign-up" for CSS
 // On submit, calls the signUp(event) function declared below
 function renderSignUp() {
-    document.querySelector('#page').innerHTML = `
+  document.querySelector("#page").innerHTML = `
         <section class="sign-up">
             <form action="" onSubmit="signUp(event)">
-                <h2>Sign Up:</h2>
+                <h2>Sign Up :</h2>
                 <fieldset>
-                    <label for="">Name: </label><br>
-                    <input type="text" name="name">
+                    <label for="">Name : </label><br>
+                    <input type="text" name="name" required>
                 </fieldset>
                 <fieldset>
-                    <label for="">Email: </label><br>
-                    <input type="text" name="email">
+                    <label for="">Email : </label><br>
+                    <input type="email" name="email" required>
                 </fieldset>
                 <fieldset>
-                    <label for="">Password: </label><br>
-                    <input type="password" name="password">
+                    <label for="">Password : </label><br>
+                    <input type="password" name="password" required>
                 </fieldset>
                 <button>Sign Up</button>
             </form>
         </section> 
-    `
+    `;
 }
 
 // Will send an axios post request along with sign-up data to users_controller.js
-// route is 'api/users', might not need to be 
+// route is 'api/users', might not need to be
 function signUp(event) {
-    event.preventDefault()
-    const form = event.target
-    const data = Object.fromEntries(new FormData(form))
-    axios
-        .post('/api/users', data)
-        .then(res => res.data)
-        .then(() => renderHomePage())
+  event.preventDefault();
+  const form = event.target;
+  const data = Object.fromEntries(new FormData(form));
+  axios
+    .post("/api/users", data)
+    .then((res) => res.data)
+    .then(() => renderHomePage());
 }
-

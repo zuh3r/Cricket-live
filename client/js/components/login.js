@@ -5,42 +5,42 @@
 // On submit, calls the login(event) function declared below
 
 function renderLogin() {
-    document.querySelector('#page').innerHTML = `
+  document.querySelector("#page").innerHTML = `
         <section class="login">
             <div class="error"></div>
             <form action="" onSubmit="login(event)">
-                <h2>Login: </h2>
+                <h2>Login : </h2>
                 <fieldset>
-                    <label for="">Email: </label><br>
-                    <input type="text" name="email">
+                    <label for="">Email : </label><br>
+                    <input type="email" name="email" required>
                 </fieldset>
                 <fieldset>
-                    <label for="">Password: </label><br>
-                    <input type="password" name="password">
+                    <label for="">Password : </label><br>
+                    <input type="password" name="password" required>
                 </fieldset>
                 <button>Login</button>
             </form>
         </section>
-    `
+    `;
 }
 
 // Will send an axios post request along with login data to sessions_controller.js
 // Route is 'api/sessions'
 
 function login(event) {
-    event.preventDefault()
-    const form = event.target
-    const data = Object.fromEntries(new FormData(form))
-    axios
-        .post('/api/sessions', data)
-        .then(res => res.data)
-        .then(user => {
-            renderHeaderNav(true)
-            renderWelcome(user.username, user.email)
-            renderHomePage()
-        })
-        .catch(error => {
-            let errorDOM = document.querySelector('.login .error')
-            errorDOM.textContent = error.response.data.message
-        })
+  event.preventDefault();
+  const form = event.target;
+  const data = Object.fromEntries(new FormData(form));
+  axios
+    .post("/api/sessions", data)
+    .then((res) => res.data)
+    .then((user) => {
+      renderHeaderNav(true);
+      renderWelcome(user.username, user.email);
+      renderHomePage();
+    })
+    .catch((error) => {
+      let errorDOM = document.querySelector(".login .error");
+      errorDOM.textContent = error.response.data.message;
+    });
 }
