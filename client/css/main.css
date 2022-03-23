@@ -1,78 +1,95 @@
 .dropbtn {
-    background-color: #e1e1e1;
-    color: rgb(0, 0, 0);
-    padding: 4px;
-    font-size: 14px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    margin: 0 5px;
+  color: rgb(0, 0, 0);
+  padding: 4px;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 0 5px;
+  box-shadow: 1px 2px 2px 3px black;
 }
 
 /* Dropdown button on hover & focus */
-.dropbtn:hover, .dropbtn:focus {
-    background-color: #5e5e5e;
+.dropbtn:hover,
+.dropbtn:focus {
+  background-color: #5e5e5e;
 }
 
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
-    position: relative;
-    display: inline-block;
+  position: relative;
+  display: inline-block;
+  font-family: "Orbitron", sans-serif;
 }
 
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
 }
 
 /* Links inside the dropdown */
 .dropdown-content button {
-    color: black;
-    padding: 6px 8px;
-    margin: 5px;
-    background-color: transparent;
-    font-size: 16px;
-    border: none;
-    font-weight: normal;
+  color: black;
+  padding: 6px 8px;
+  margin: 5px;
+  background-color: transparent;
+  font-size: 16px;
+  border: none;
+  font-weight: normal;
 }
 
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {
-    background-color: #ddd
+  background-color: #ddd;
+}
+#myDropdown {
+  border-radius: 10px;
+  background-image: url(./photos/New_Abstract_Background_Wallpaper.jpeg);
+  color: rgb(255, 255, 255);
 }
 
 .show {
-    display: grid;
-
+  display: grid;
 }
 
 .welcome {
-    font-size: 18px;
-    font-weight: normal;
-    color: rgb(60, 60, 60);
+  font-size: 18px;
+  font-weight: normal;
+  color: rgb(255, 255, 255);
 }
 
 .my-account {
-    display: inherit;
-    margin-top: 50px;
-    text-align: center;
-    font-size: larger;
+  display: inherit;
+  margin-top: 50px;
+  text-align: center;
+  font-size: large;
+  font-family: "Orbitron", sans-serif;
 }
 
 .my-account label {
-    font-weight: bold;
+  font-weight: bold;
 }
 .my-account span {
-    font-weight: bold;
-    display: initial;
+  font-weight: bold;
+  display: initial;
 }
 
 .my-account button {
-    margin-left: 5px;
-    font-size: 14px;
+  margin-left: 5px;
+  font-size: 14px;
+}
+.preferences {
+  text-align: center;
+  font-family: "Orbitron", sans-serif;
+}
+.preferences form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
 }

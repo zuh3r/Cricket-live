@@ -11,7 +11,7 @@ html * {
 }
 
 .tournament-name {
-  font-size: 1.3em;
+  font-size: 1.1em;
   padding-bottom: 15px;
   text-align: center;
   display: block;
@@ -19,7 +19,7 @@ html * {
 
 .tournaments_ul .match-date {
   font-size: 21px;
-  color: rgb(244, 238, 238);
+  color: rgba(0, 0, 0, 0.817);
   text-align: center;
   display: block;
 }
@@ -39,16 +39,18 @@ html * {
 .tournaments_ul {
   list-style: none;
   padding: 0;
+  color: #ffffff;
 }
 .tournaments_ul {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   width: 100%;
   justify-content: space-between;
+  margin-top: 50px;
 }
 .tournaments_ul li .content {
-  /* background-color: #1a4500fa; */
-  background-color: #373a34fa;
+  /* background-color: #373a34fa; */
+  background-color: #fffefed2;
 
   transition: 0.5s;
   width: 51vw;
@@ -64,7 +66,10 @@ html * {
   transition: 0.4s;
 }
 .tournaments_ul li.hover .content {
-  background-color: rgb(174, 173, 173);
+  /* background-color: rgb(174, 173, 173); */
+  /* background-color: rgb(64, 167, 0); */
+  background-color: rgb(124, 206, 72);
+
   transition: 0.5s;
 }
 .tournamentsSection {
@@ -74,9 +79,11 @@ html * {
   font-family: "Orbitron", sans-serif;
 }
 .tournaments_ul .type {
-  color: rgba(147, 250, 83, 0.673);
+  color: rgb(255, 217, 5);
 }
-
+.match-country {
+  color: black;
+}
 /* MATCHES */
 
 .matches_ul {
@@ -85,7 +92,7 @@ html * {
   gap: 30px;
   padding: 20px 0px;
   list-style: none;
-  margin: 0px auto;
+  margin-top: 50px;
 }
 .matchesSection {
   width: 96%;
@@ -122,9 +129,6 @@ span.status {
 
 @media only screen and (max-width: 600px) {
   .tournaments_ul li .content {
-    /* background-color: #1a4500fa; */
-    background-color: #373a34fa;
-
     width: 51vw;
     height: 150px;
   }
