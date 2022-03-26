@@ -7,10 +7,10 @@ function renderHeaderNav(session = false) {
             </nav>
             <nav class="right-nav">
                 <ul>
-                    <li>News</li>
-                    <li>Matches</li>
+                    <li onClick="render('renderNews')">News</li>
+                    <li class="hide">Matches</li>
                     <li onClick="render('renderTournamentsPage')">Tournaments</li>
-                    <li>Players</li>
+                    <li class="hide">Players</li>
                     <li id="welcome" class="welcome"></li>
                     ${
                       !session
@@ -34,6 +34,8 @@ function render(component) {
     renderLogin();
   } else if (component === "renderTournamentsPage") {
     renderTournamentsPage();
+  } else if (component === "renderNews"){
+    renderNewsPage();
   }
 }
 

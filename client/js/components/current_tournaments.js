@@ -87,19 +87,18 @@ function renderAllMatches(matches) {
                 : match.status == "cancelled"
                 ? "cancelled"
                 : ""
-            }" ${
-          match.status == "closed" ? 'onClick="renderMatchSummary(event)"' : ""
-        } match-id='${match.id}'>${
-          match.status == "live"
-            ? "Live"
-            : match.status == "cancelled"
-            ? "Cancelled"
-            : match.status == "Closed"
-            ? "Finished"
-            : match.status == "not_started"
-            ? "Not Started"
-            : ""
-        }</span>    
+              }" ${match.status == "closed" ? 'onClick="renderMatchSummary(event)"' : ""
+                  } match-id='${match.id}'>${
+                match.status == "live"
+                  ? "Live"
+                  : match.status == "cancelled"
+                  ? "Cancelled"
+                  : match.status == "Closed"
+                  ? "Finished"
+                  : match.status == "not_started"
+                  ? "Not Started"
+                  : ""
+              }</span>    
         </li>
         `
 
@@ -174,13 +173,55 @@ function addHoverClass(event) {
 //get matches using tournament ID
 function showTournament(event) {
   var tournamentId = event.target.closest("li").getAttribute("tournament_id");
-
+  
   axios
     .get(`/api/matches/schedule/${tournamentId}`) //gets a list of tournaments
     .then((res) => {
       testResponse = res;
       tournamentMatches = res.data.sport_events;
       console.log("matches for tournament received");
+      var matchDOM = `<h1>${tournamentMatches[0].season.name}</h1><p class="dates">${tournamentMatches[0].season.start_date} - ${tournamentMatches[0].season.end_date}</p>`
+      
+      var matches = tournamentMatches.map((match)=>{
+        const team1 = match.competitors[0]
+        const team2 = match.competitors[1]
+        return `<div class="match">
+          <div class="team1">
+            <h2>${team1.name}</h2>
+            <span>${team1.qualifier}</span>
+          </div>
+          <span>vs</span>
+          <div class="team2">
+            <h2>${team2.name}</h2>
+            <span>${team2.qualifier}</span>
+          </div>
+          <p>${match.scheduled.split(':')[0]}</p>
+          <span class="status ${
+            match.status == "live"
+              ? "live"
+              : match.status == "cancelled"
+              ? "cancelled"
+              : ""
+            }" ${match.status == "ended" ? 'onClick="renderMatchSummary(event)"' : ""
+                } match-id='${match.id}'>${
+              match.status == "live"
+                ? "Live"
+                : match.status == "cancelled"
+                ? "Cancelled"
+                : match.status == "ended"||match.status == "closed"
+                ? "Ended"
+                : match.status == "not_started"
+                ? "Not Started"
+                : ""
+            }</span>  
+        </div>`
+        
+      }).join('')
+      
+      matchDOM += `<div class="matchesArea"> ${matches} </div>`
+
+
+      showModal(matchDOM)
       //console.log(renderAllMatches(tournamentMatches,0))
     })
     .catch((errorMessage) => console.log(errorMessage));

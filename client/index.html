@@ -37,6 +37,7 @@
     <link rel="stylesheet" href="/css/tournaments.css" />
     <link rel="stylesheet" href="/css/news.css" />
     <link rel="stylesheet" href="/css/tournaments-page.css" />
+    <link rel="stylesheet" href="/css/modal.css" />
 
     <!-- Axios library -->
     <script
@@ -64,7 +65,24 @@
   <body>
     <nav id="header-nav" class="header-nav"></nav>
     <section id="page" class="content"></section>
+    <div class="modal_wrapper inactive" tag="wrapper">
+      <span class="modal_close" tag="close">x</span>
+      <div class="modal_body" tag="body"></div> 
+    </div>
+    <script> 
+      document.querySelector('.modal_wrapper').addEventListener('click', (event)=>{
+        var tag = event.target.getAttribute('tag')
+        if( tag == 'wrapper' || tag == 'close'){
+          console.log("wrapper clicked")
+          document.querySelector('.modal_wrapper').classList.add('inactive')
+        } 
+      })
+      function showModal(content){
+        document.querySelector('.modal_body').innerHTML = content
+        document.querySelector('.modal_wrapper.inactive').classList.remove('inactive')
 
+      }
+    </script>
     <footer class="sign-up-footer"></footer>
   </body>
 </html>
