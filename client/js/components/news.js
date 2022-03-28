@@ -2,11 +2,18 @@ function renderAllNews() {
   document.querySelector(".newsSection").innerHTML = ` 
          
             <div class="news">
-                ${renderNews()} 
+                ${renderNews(1)} 
             </div>  
     `;
 }
-
+function renderNewsPage(){
+  document.querySelector("#page").innerHTML = ` 
+         
+            <div class="news allNews">
+                ${renderNews(undefined)} 
+            </div>  
+    `;
+}
 var newsData = {};
 function getNews() {
   console.log("Testing - getting NEWS");
@@ -17,9 +24,9 @@ function getNews() {
   });
 }
 
-function renderNews() {
+function renderNews(num) {
   return newsData
-    .slice(0, 1)
+    .slice(0, num)
     .map(
       (news) =>
         `<article  class="news-article" news-url='${
