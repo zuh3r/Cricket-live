@@ -1,4 +1,9 @@
 # Cricket Live
+
+# Check it out! - https://apkzmedia.herokuapp.com
+
+# Project By: Zuher Feki, Kenny Pearson, Pouria Ghafourzadeh & Asbah Ashfaq
+
 ## Project 2 - SEI - General Assembly
 Full stack SPA (Single Page Application) using API interaction and JavaScript DOM manipulation completed in a group of four.
 
