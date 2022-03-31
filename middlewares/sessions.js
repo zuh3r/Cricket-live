@@ -1,5 +1,6 @@
 // Kenny created file 16/3
 const session = require('express-session')
+const env = require('dotenv').config()
 
 const sessions = session({
     key: 'user_sid',
