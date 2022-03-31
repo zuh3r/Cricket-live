@@ -41,7 +41,7 @@ const User = {
     updateEmail: (email, id) => {
         const sql = `
             UPDATE users
-            SET name = $2
+            SET email = $2
             WHERE id = $1 
             RETURNING *
         `
@@ -53,5 +53,3 @@ const User = {
 
     
     module.exports = User
-
-    // add router.get
