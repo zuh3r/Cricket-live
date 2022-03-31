@@ -13,5 +13,3 @@ if (process.env.NODE_ENV === 'production') {
     database: 'cricket_live'
   })
 }
-
-module.exports = db
